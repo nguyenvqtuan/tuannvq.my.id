@@ -1,0 +1,91 @@
+{
+  "navigation": {
+    "home": "Trang chủ",
+    "about": "Giới thiệu",
+    "experience": "Kinh nghiệm",
+    "projects": "Dự án",
+    "certificates": "Chứng chỉ",
+    "chatroom": "Phòng chat",
+    "contact": "Liên hệ"
+  },
+  "common": {
+    "name": "Tuan Nguyen",
+    "role": "Lập trình viên Full Stack",
+    "viewProjects": "Xem dự án",
+    "downloadCV": "Tải CV"
+  },
+  "home": {
+    "title": "Chào mừng đến với Portfolio của tôi",
+    "description": "Xin chào! Tôi là Tuan Nguyen, một lập trình viên Full Stack đam mê với chuyên môn về các công nghệ web hiện đại. Khám phá hành trình, dự án và kinh nghiệm của tôi trong thế giới công nghệ."
+  },
+  "about": {
+    "title": "Về tôi",
+    "personalInfo": "Thông tin cá nhân",
+    "skills": "Kỹ năng",
+    "bio": "Tiểu sử",
+    "location": "Việt Nam",
+    "experience": "5+ năm",
+    "bioText": "Tôi là một lập trình viên đam mê, thích tạo ra các giải pháp sáng tạo và học hỏi công nghệ mới. Với nền tảng vững chắc về cả phát triển frontend và backend, tôi thích xây dựng các ứng dụng có thể mở rộng để giải quyết các vấn đề thực tế. Khi không lập trình, bạn có thể tìm thấy tôi khám phá công nghệ mới, đóng góp cho các dự án mã nguồn mở hoặc chia sẻ kiến thức với cộng đồng lập trình viên."
+  },
+  "experience": {
+    "title": "Kinh nghiệm làm việc",
+    "seniorDeveloper": "Lập trình viên Full Stack cao cấp",
+    "fullStackDeveloper": "Lập trình viên Full Stack",
+    "frontendDeveloper": "Lập trình viên Frontend",
+    "techCompanyA": "Công ty Công nghệ A",
+    "startupB": "Startup B",
+    "companyC": "Công ty C",
+    "seniorDescription": "Lãnh đạo phát triển nhiều ứng dụng web sử dụng React, Node.js và công nghệ đám mây.",
+    "fullStackDescription": "Xây dựng và duy trì các ứng dụng web khác nhau, làm việc với các framework và cơ sở dữ liệu hiện đại.",
+    "frontendDescription": "Phát triển giao diện người dùng đáp ứng và triển khai các mẫu thiết kế hiện đại."
+  },
+  "projects": {
+    "title": "Dự án",
+    "ecommerce": "Nền tảng Thương mại điện tử",
+    "ecommerceDesc": "Giải pháp thương mại điện tử full-stack với frontend React và backend Node.js.",
+    "taskManagement": "Ứng dụng Quản lý công việc",
+    "taskManagementDesc": "Ứng dụng quản lý công việc cộng tác với cập nhật thời gian thực.",
+    "portfolio": "Website Portfolio",
+    "portfolioDesc": "Website portfolio này được xây dựng bằng Next.js và Tailwind CSS."
+  },
+  "certificates": {
+    "title": "Chứng chỉ",
+    "awsDeveloper": "Chứng chỉ AWS Developer",
+    "reactDeveloper": "Chứng chỉ React Developer",
+    "nodejsBackend": "Phát triển Backend Node.js",
+    "amazon": "Amazon Web Services",
+    "meta": "Meta",
+    "coursera": "Coursera"
+  },
+  "chatroom": {
+    "title": "Phòng Chat",
+    "subtitle": "Phòng Chat Tương tác",
+    "description": "Kết nối với tôi theo thời gian thực! Tính năng này sẽ sớm ra mắt.",
+    "features": "Các tính năng dự kiến:",
+    "realTime": "• Nhắn tin thời gian thực",
+    "fileSharing": "• Chia sẻ tệp",
+    "videoCalls": "• Gọi video",
+    "codeCollaboration": "• Cộng tác mã"
+  },
+  "contact": {
+    "title": "Liên hệ",
+    "contactInfo": "Thông tin liên hệ",
+    "sendMessage": "Gửi tin nhắn",
+    "email": "Email",
+    "phone": "Điện thoại",
+    "location": "Địa chỉ",
+    "hoChiMinh": "Thành phố Hồ Chí Minh, Việt Nam",
+    "yourName": "Tên của bạn",
+    "yourEmail": "Email của bạn",
+    "yourMessage": "Tin nhắn của bạn",
+    "send": "Gửi tin nhắn"
+  },
+  "skills": {
+    "javascript": "JavaScript/TypeScript",
+    "react": "React/Next.js",
+    "nodejs": "Node.js",
+    "python": "Python",
+    "sql": "SQL/NoSQL",
+    "aws": "AWS/Cloud"
+  }
+} 

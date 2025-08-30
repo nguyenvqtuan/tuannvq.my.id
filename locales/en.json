@@ -1,0 +1,91 @@
+{
+  "navigation": {
+    "home": "Home",
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "certificates": "Certificates",
+    "chatroom": "Chat Room",
+    "contact": "Contact"
+  },
+  "common": {
+    "name": "Tuan Nguyen",
+    "role": "Full Stack Developer",
+    "viewProjects": "View Projects",
+    "downloadCV": "Download CV"
+  },
+  "home": {
+    "title": "Welcome to My Portfolio",
+    "description": "Hi! I'm Tuan Nguyen, a passionate Full Stack Developer with expertise in modern web technologies. Explore my journey, projects, and experience in the tech world."
+  },
+  "about": {
+    "title": "About Me",
+    "personalInfo": "Personal Information",
+    "skills": "Skills",
+    "bio": "Bio",
+    "location": "Vietnam",
+    "experience": "5+ years",
+    "bioText": "I'm a passionate developer who loves creating innovative solutions and learning new technologies. With a strong foundation in both frontend and backend development, I enjoy building scalable applications that solve real-world problems. When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or sharing knowledge with the developer community."
+  },
+  "experience": {
+    "title": "Work Experience",
+    "seniorDeveloper": "Senior Full Stack Developer",
+    "fullStackDeveloper": "Full Stack Developer",
+    "frontendDeveloper": "Frontend Developer",
+    "techCompanyA": "Tech Company A",
+    "startupB": "Startup B",
+    "companyC": "Company C",
+    "seniorDescription": "Led development of multiple web applications using React, Node.js, and cloud technologies.",
+    "fullStackDescription": "Built and maintained various web applications, working with modern frameworks and databases.",
+    "frontendDescription": "Developed responsive user interfaces and implemented modern design patterns."
+  },
+  "projects": {
+    "title": "Projects",
+    "ecommerce": "E-commerce Platform",
+    "ecommerceDesc": "A full-stack e-commerce solution with React frontend and Node.js backend.",
+    "taskManagement": "Task Management App",
+    "taskManagementDesc": "A collaborative task management application with real-time updates.",
+    "portfolio": "Portfolio Website",
+    "portfolioDesc": "This portfolio website built with Next.js and Tailwind CSS."
+  },
+  "certificates": {
+    "title": "Certificates",
+    "awsDeveloper": "AWS Certified Developer",
+    "reactDeveloper": "React Developer Certification",
+    "nodejsBackend": "Node.js Backend Development",
+    "amazon": "Amazon Web Services",
+    "meta": "Meta",
+    "coursera": "Coursera"
+  },
+  "chatroom": {
+    "title": "Chat Room",
+    "subtitle": "Interactive Chat Room",
+    "description": "Connect with me in real-time! This feature is coming soon.",
+    "features": "Features planned:",
+    "realTime": "• Real-time messaging",
+    "fileSharing": "• File sharing",
+    "videoCalls": "• Video calls",
+    "codeCollaboration": "• Code collaboration"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "contactInfo": "Contact Information",
+    "sendMessage": "Send Message",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "hoChiMinh": "Ho Chi Minh City, Vietnam",
+    "yourName": "Your Name",
+    "yourEmail": "Your Email",
+    "yourMessage": "Your Message",
+    "send": "Send Message"
+  },
+  "skills": {
+    "javascript": "JavaScript/TypeScript",
+    "react": "React/Next.js",
+    "nodejs": "Node.js",
+    "python": "Python",
+    "sql": "SQL/NoSQL",
+    "aws": "AWS/Cloud"
+  }
+} 
