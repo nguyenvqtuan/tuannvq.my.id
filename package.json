@@ -6,11 +6,19 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:db": "node scripts/test-db-connection.cjs",
+    "setup:supabase": "node scripts/setup-supabase.cjs"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.7.0",
+    "@supabase/supabase-js": "^2.56.1",
+    "@types/pg": "^8.15.5",
+    "axios": "^1.11.0",
+    "dotenv": "^17.2.1",
     "framer-motion": "^12.23.12",
     "next": "15.5.0",
+    "pg": "^8.16.3",
     "react": "19.1.0",
     "react-dom": "19.1.0"
   },
