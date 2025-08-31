@@ -6,8 +6,12 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const page = parseInt(searchParams.get('page') || '1');
     const limit = parseInt(searchParams.get('limit') || '10');
-    const isShow = searchParams.get('isShow') ? searchParams.get('isShow') === 'true' : undefined;
-    const isFeatured = searchParams.get('isFeatured') ? searchParams.get('isFeatured') === 'true' : undefined;
+    const isShow = searchParams.get('isShow')
+      ? searchParams.get('isShow') === 'true'
+      : undefined;
+    const isFeatured = searchParams.get('isFeatured')
+      ? searchParams.get('isFeatured') === 'true'
+      : undefined;
 
     const result = await projectsService.getProjects({
       isShow,
@@ -35,4 +39,4 @@ export async function POST(request: NextRequest) {
       { status: 500 }
     );
   }
-} 
+}

@@ -1,4 +1,21 @@
-// No middleware needed for query parameter-based locale switching
+import createMiddleware from 'next-intl/middleware';
+import { locales, defaultLocale } from './src/lib/i18n';
+
+export default createMiddleware({
+  // A list of all locales that are supported
+  locales: locales,
+
+  // Used when no locale matches
+  defaultLocale: defaultLocale,
+
+  // Always show the locale in the URL
+  localePrefix: 'always',
+
+  // Enable locale detection
+  localeDetection: true,
+});
+
 export const config = {
-  matcher: []
-}; 
+  // Match only internationalized pathnames
+  matcher: ['/', '/(vi|en)/:path*'],
+};

@@ -13,17 +13,21 @@ export default function ContactForm() {
   const [formData, setFormData] = useState<ContactFormData>({
     name: '',
     email: '',
-    message: ''
+    message: '',
   });
-  
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<
+    'idle' | 'success' | 'error'
+  >('idle');
+
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
-      [name]: value
+      [name]: value,
     }));
   };
 
@@ -36,7 +40,7 @@ export default function ContactForm() {
       const result = await messagesService.createMessage({
         ...formData,
         is_show: true,
-        is_reply: false
+        is_reply: false,
       });
 
       if (result) {
@@ -55,13 +59,13 @@ export default function ContactForm() {
   return (
     <div className="bg-white rounded-lg shadow-lg p-6">
       <h2 className="text-2xl font-bold text-gray-800 mb-6">Get In Touch</h2>
-      
+
       {submitStatus === 'success' && (
         <div className="mb-4 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
           Thank you for your message! I&apos;ll get back to you soon.
         </div>
       )}
-      
+
       {submitStatus === 'error' && (
         <div className="mb-4 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
           Something went wrong. Please try again.
@@ -70,7 +74,10 @@ export default function ContactForm() {
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+          <label
+            htmlFor="name"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Name *
           </label>
           <input
@@ -86,7 +93,10 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+          <label
+            htmlFor="email"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Email *
           </label>
           <input
@@ -102,7 +112,10 @@ export default function ContactForm() {
         </div>
 
         <div>
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+          <label
+            htmlFor="message"
+            className="block text-sm font-medium text-gray-700 mb-1"
+          >
             Message *
           </label>
           <textarea
@@ -127,4 +140,4 @@ export default function ContactForm() {
       </form>
     </div>
   );
-} 
+}

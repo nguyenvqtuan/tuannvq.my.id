@@ -17,11 +17,11 @@ export abstract class BaseService {
 
     // Request interceptor
     this.axiosInstance.interceptors.request.use(
-      (config) => {
+      config => {
         // Add any request logic here (e.g., auth tokens)
         return config;
       },
-      (error) => {
+      error => {
         return Promise.reject(error);
       }
     );
@@ -31,7 +31,7 @@ export abstract class BaseService {
       (response: AxiosResponse) => {
         return response;
       },
-      (error) => {
+      error => {
         // Handle common errors
         if (error.response?.status === 401) {
           // Handle unauthorized
@@ -60,7 +60,11 @@ export abstract class BaseService {
   }
 
   // Generic POST request
-  protected async post<T>(url: string, data?: unknown, config?: AxiosRequestConfig): Promise<T> {
+  protected async post<T>(
+    url: string,
+    data?: unknown,
+    config?: AxiosRequestConfig
+  ): Promise<T> {
     try {
       const response = await this.axiosInstance.post<T>(url, data, config);
       return response.data;
@@ -71,7 +75,11 @@ export abstract class BaseService {
   }
 
   // Generic PUT request
-  protected async put<T>(url: string, data?: unknown, config?: AxiosRequestConfig): Promise<T> {
+  protected async put<T>(
+    url: string,
+    data?: unknown,
+    config?: AxiosRequestConfig
+  ): Promise<T> {
     try {
       const response = await this.axiosInstance.put<T>(url, data, config);
       return response.data;
@@ -82,7 +90,11 @@ export abstract class BaseService {
   }
 
   // Generic PATCH request
-  protected async patch<T>(url: string, data?: unknown, config?: AxiosRequestConfig): Promise<T> {
+  protected async patch<T>(
+    url: string,
+    data?: unknown,
+    config?: AxiosRequestConfig
+  ): Promise<T> {
     try {
       const response = await this.axiosInstance.patch<T>(url, data, config);
       return response.data;
@@ -93,7 +105,10 @@ export abstract class BaseService {
   }
 
   // Generic DELETE request
-  protected async delete<T>(url: string, config?: AxiosRequestConfig): Promise<T> {
+  protected async delete<T>(
+    url: string,
+    config?: AxiosRequestConfig
+  ): Promise<T> {
     try {
       const response = await this.axiosInstance.delete<T>(url, config);
       return response.data;
@@ -120,7 +135,8 @@ export abstract class BaseService {
 
   // Set auth token
   public setAuthToken(token: string): void {
-    this.axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+    this.axiosInstance.defaults.headers.common['Authorization'] =
+      `Bearer ${token}`;
   }
 
   // Remove auth token
@@ -133,4 +149,4 @@ export abstract class BaseService {
     this.baseURL = newBaseURL;
     this.axiosInstance.defaults.baseURL = newBaseURL;
   }
-} 
+}

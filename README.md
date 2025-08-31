@@ -2,6 +2,34 @@
 
 A modern, responsive portfolio website built with Next.js, TypeScript, and Tailwind CSS.
 
+## 📦 Tech Stack & Packages
+
+### **Core Framework**
+
+- **⚛️ Next.js 15.5.0** - React framework with App Router
+- **🔰 TypeScript 5.x** - Type-safe JavaScript
+- **💠 Tailwind CSS v4** - Utility-first CSS framework
+
+### **State Management & Data Fetching**
+
+- **🦫 Zustand** - Lightweight state management
+- **〰️ SWR** - React hooks for data fetching
+
+### **UI & Animation**
+
+- **➰ Framer Motion** - Animation library for React
+- **💢 React Icons** - Popular icon library
+
+### **Internationalization**
+
+- **🌐 Next-Intl** - Internationalization for Next.js
+
+### **Development Tools**
+
+- **📏 ESLint & Prettier** - Code linting and formatting
+- **📌 Conventional Commit Lint** - Git commit message standards
+- **📦 Absolute Imports & Path Alias** - Clean import paths (@/\*)
+
 ## 🏗️ Project Structure
 
 The project follows a clean separation of concerns:
@@ -45,26 +73,31 @@ src/
 ## 🎯 Architecture Overview
 
 ### **Services Layer** (`/src/services`)
+
 - **Purpose**: Direct database operations using PostgreSQL
 - **Responsibility**: CRUD operations, data validation, business logic
 - **No HTTP concerns**: Pure database interaction
 
 ### **API Layer** (`/src/api`)
+
 - **Purpose**: HTTP request handling and API function definitions
 - **Responsibility**: HTTP methods, request/response formatting, error handling
 - **No database concerns**: Pure HTTP communication
 
 ### **App Layer** (`/src/app`)
+
 - **Purpose**: Next.js API route handlers
 - **Responsibility**: Route definitions, request processing, service calls
 - **Bridge**: Connects HTTP requests to service layer
 
 ### **Components Layer** (`/src/components`)
+
 - **Purpose**: Reusable UI components
 - **Responsibility**: HTML structure, CSS styling, user interaction
 - **No data fetching**: Receives data via props
 
 ### **Hooks Layer** (`/src/hooks`)
+
 - **Purpose**: Custom React hooks for data management
 - **Responsibility**: State management, API calls, data synchronization
 - **No UI concerns**: Pure logic and data handling
@@ -72,24 +105,28 @@ src/
 ## 🚀 Key Features
 
 ### **Database Integration**
+
 - PostgreSQL with connection pooling
 - Comprehensive CRUD operations
 - Optimized queries with proper indexing
 - Transaction support and error handling
 
 ### **API Design**
+
 - RESTful API endpoints
 - Consistent response formatting
 - Query parameter support
 - Error handling and validation
 
 ### **Component Architecture**
+
 - Reusable, composable components
 - TypeScript interfaces for props
 - Responsive design with Tailwind CSS
 - Accessibility considerations
 
 ### **Data Management**
+
 - Custom hooks for state management
 - Optimistic updates
 - Error handling and loading states
@@ -98,18 +135,21 @@ src/
 ## 📊 Database Schema
 
 ### **Messages Table**
+
 - Contact form submissions
 - Admin replies
 - Visibility controls
 - Timestamp tracking
 
 ### **Projects Table**
+
 - Portfolio projects
 - Technology stacks
 - Featured project support
 - Demo and GitHub links
 
 ### **Achievements Table**
+
 - Professional certifications
 - Organization details
 - Category classification
@@ -118,6 +158,7 @@ src/
 ## 🔧 Setup Instructions
 
 ### 1. **Install Dependencies**
+
 ```bash
 npm install
 ```
@@ -125,6 +166,7 @@ npm install
 ### 2. **Database Setup**
 
 #### **Option A: Supabase (Recommended)**
+
 ```bash
 # 1. Copy environment template
 cp env.example .env
@@ -138,6 +180,7 @@ npm run test:db
 ```
 
 #### **Option B: Local PostgreSQL**
+
 ```bash
 # Install PostgreSQL
 # Create database: tuannvq_portfolio
@@ -154,6 +197,7 @@ psql -U postgres -d tuannvq_portfolio -f database/sample_data.sql
 ### 3. **Environment Configuration**
 
 #### **For Supabase (Recommended)**
+
 ```bash
 # Copy environment template
 cp env.example .env
@@ -169,6 +213,7 @@ NODE_ENV=development
 ```
 
 #### **For Local PostgreSQL**
+
 ```env
 DB_HOST=localhost
 DB_PORT=5432
@@ -179,11 +224,13 @@ NODE_ENV=development
 ```
 
 ### 4. **Development Server**
+
 ```bash
 npm run dev
 ```
 
 ### 5. **Build Production**
+
 ```bash
 npm run build
 npm start
@@ -192,6 +239,7 @@ npm start
 ## 📱 Usage Examples
 
 ### **Using API Functions**
+
 ```typescript
 import { projectApi, achievementApi } from '@/api';
 
@@ -203,6 +251,7 @@ const cloudCerts = await achievementApi.getByCategory('Cloud Computing');
 ```
 
 ### **Using Custom Hooks**
+
 ```typescript
 import { useProjects, useAchievements } from '@/hooks';
 
@@ -215,7 +264,7 @@ function MyComponent() {
   }, []);
 
   if (loading) return <div>Loading...</div>;
-  
+
   return (
     <div>
       {projects.map(project => (
@@ -227,6 +276,7 @@ function MyComponent() {
 ```
 
 ### **Using Components**
+
 ```typescript
 import { ProjectCard, AchievementCard, ContactForm } from '@/components';
 
@@ -239,14 +289,14 @@ function PortfolioPage() {
           <ProjectCard key={project.id} project={project} />
         ))}
       </div>
-      
+
       <h1>My Achievements</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {achievements.map(achievement => (
           <AchievementCard key={achievement.id} achievement={achievement} />
         ))}
       </div>
-      
+
       <ContactForm />
     </div>
   );
@@ -278,16 +328,19 @@ User Interaction → Component → Hook → API Function → API Route → Servi
 ## 🧪 Testing
 
 ### **Component Testing**
+
 ```bash
 npm run test:components
 ```
 
 ### **API Testing**
+
 ```bash
 npm run test:api
 ```
 
 ### **Integration Testing**
+
 ```bash
 npm run test:integration
 ```
@@ -295,12 +348,14 @@ npm run test:integration
 ## 🚀 Deployment
 
 ### **Vercel (Recommended)**
+
 ```bash
 npm run build
 vercel --prod
 ```
 
 ### **Docker**
+
 ```bash
 docker build -t portfolio .
 docker run -p 3000:3000 portfolio
@@ -309,16 +364,19 @@ docker run -p 3000:3000 portfolio
 ## 📚 API Documentation
 
 ### **Messages Endpoints**
+
 - `GET /api/messages` - Get all messages with pagination
 - `POST /api/messages` - Create new message
 - `GET /api/messages/public` - Get public messages
 
 ### **Projects Endpoints**
+
 - `GET /api/projects` - Get all projects with pagination
 - `POST /api/projects` - Create new project
 - `GET /api/projects/featured` - Get featured projects
 
 ### **Achievements Endpoints**
+
 - `GET /api/achievements` - Get all achievements with pagination
 - `POST /api/achievements` - Create new achievement
 

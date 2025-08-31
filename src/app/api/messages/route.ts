@@ -6,8 +6,12 @@ export async function GET(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const page = parseInt(searchParams.get('page') || '1');
     const limit = parseInt(searchParams.get('limit') || '20');
-    const isShow = searchParams.get('isShow') ? searchParams.get('isShow') === 'true' : undefined;
-    const isReply = searchParams.get('isReply') ? searchParams.get('isReply') === 'true' : undefined;
+    const isShow = searchParams.get('isShow')
+      ? searchParams.get('isShow') === 'true'
+      : undefined;
+    const isReply = searchParams.get('isReply')
+      ? searchParams.get('isReply') === 'true'
+      : undefined;
 
     const messages = await messagesService.getMessages({
       isShow,
@@ -36,4 +40,4 @@ export async function POST(request: NextRequest) {
       { status: 500 }
     );
   }
-} 
+}

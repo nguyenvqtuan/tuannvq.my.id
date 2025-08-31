@@ -27,32 +27,34 @@ export class AchievementsService extends BaseService {
   }
 
   // Get all achievements with pagination and filters
-  async getAchievements(filters: AchievementFilters = {}): Promise<PaginatedResponse<Achievement>> {
+  async getAchievements(
+    filters: AchievementFilters = {}
+  ): Promise<PaginatedResponse<Achievement>> {
     const params = new URLSearchParams();
-    
+
     if (filters.isShow !== undefined) {
       params.append('isShow', filters.isShow.toString());
     }
-    
+
     if (filters.category) {
       params.append('category', filters.category);
     }
-    
+
     if (filters.organization) {
       params.append('organization', filters.organization);
     }
-    
+
     if (filters.page) {
       params.append('page', filters.page.toString());
     }
-    
+
     if (filters.limit) {
       params.append('limit', filters.limit.toString());
     }
 
     const queryString = params.toString();
     const url = queryString ? `?${queryString}` : '';
-    
+
     return this.get<PaginatedResponse<Achievement>>(url);
   }
 
@@ -67,17 +69,24 @@ export class AchievementsService extends BaseService {
   }
 
   // Get achievement by credential ID
-  async getAchievementByCredentialId(credentialId: string): Promise<Achievement> {
+  async getAchievementByCredentialId(
+    credentialId: string
+  ): Promise<Achievement> {
     return this.get<Achievement>(`/credential/${credentialId}`);
   }
 
   // Create a new achievement
-  async createAchievement(achievement: InsertAchievement): Promise<Achievement> {
+  async createAchievement(
+    achievement: InsertAchievement
+  ): Promise<Achievement> {
     return this.post<Achievement>('', achievement);
   }
 
   // Update an achievement
-  async updateAchievement(id: number, achievement: UpdateAchievement): Promise<Achievement> {
+  async updateAchievement(
+    id: number,
+    achievement: UpdateAchievement
+  ): Promise<Achievement> {
     return this.put<Achievement>(`/${id}`, achievement);
   }
 
@@ -87,37 +96,49 @@ export class AchievementsService extends BaseService {
   }
 
   // Toggle achievement visibility
-  async toggleAchievementVisibility(id: number, isShow: boolean): Promise<Achievement> {
+  async toggleAchievementVisibility(
+    id: number,
+    isShow: boolean
+  ): Promise<Achievement> {
     return this.patch<Achievement>(`/${id}`, { is_show: isShow });
   }
 
   // Get achievements by category
-  async getAchievementsByCategory(category: string, limit?: number): Promise<Achievement[]> {
+  async getAchievementsByCategory(
+    category: string,
+    limit?: number
+  ): Promise<Achievement[]> {
     const params = new URLSearchParams({ category });
     if (limit) {
       params.append('limit', limit.toString());
     }
-    
+
     return this.get<Achievement[]>(`/category?${params.toString()}`);
   }
 
   // Get achievements by organization
-  async getAchievementsByOrganization(organization: string, limit?: number): Promise<Achievement[]> {
+  async getAchievementsByOrganization(
+    organization: string,
+    limit?: number
+  ): Promise<Achievement[]> {
     const params = new URLSearchParams({ organization });
     if (limit) {
       params.append('limit', limit.toString());
     }
-    
+
     return this.get<Achievement[]>(`/organization?${params.toString()}`);
   }
 
   // Search achievements
-  async searchAchievements(query: string, limit?: number): Promise<Achievement[]> {
+  async searchAchievements(
+    query: string,
+    limit?: number
+  ): Promise<Achievement[]> {
     const params = new URLSearchParams({ q: query });
     if (limit) {
       params.append('limit', limit.toString());
     }
-    
+
     return this.get<Achievement[]>(`/search?${params.toString()}`);
   }
 
@@ -166,20 +187,25 @@ export class AchievementsService extends BaseService {
       startDate,
       endDate,
     });
-    
+
     if (limit) {
       params.append('limit', limit.toString());
     }
-    
+
     return this.get<Achievement[]>(`/date-range?${params.toString()}`);
   }
 
   // Validate credential URL
-  async validateCredentialUrl(url: string): Promise<{ isValid: boolean; message?: string }> {
-    return this.post<{ isValid: boolean; message?: string }>('/validate-credential', { url });
+  async validateCredentialUrl(
+    url: string
+  ): Promise<{ isValid: boolean; message?: string }> {
+    return this.post<{ isValid: boolean; message?: string }>(
+      '/validate-credential',
+      { url }
+    );
   }
 }
 
 // Export singleton instance
 export const achievementsService = new AchievementsService();
-export default achievementsService; 
+export default achievementsService;

@@ -26,25 +26,29 @@ export default function AchievementCard({ achievement }: AchievementCardProps) {
         <h3 className="text-xl font-bold text-gray-800 mb-2">
           {achievement.name}
         </h3>
-        
+
         <p className="text-gray-600 mb-2">
-          <span className="font-semibold">Issued by:</span> {achievement.issuing_organization}
+          <span className="font-semibold">Issued by:</span>{' '}
+          {achievement.issuing_organization}
         </p>
 
         {achievement.category && (
           <p className="text-gray-600 mb-2">
-            <span className="font-semibold">Category:</span> {achievement.category}
+            <span className="font-semibold">Category:</span>{' '}
+            {achievement.category}
           </p>
         )}
 
         <div className="mb-4">
           <p className="text-gray-600 mb-1">
-            <span className="font-semibold">Issue Date:</span> {achievement.issue_date}
+            <span className="font-semibold">Issue Date:</span>{' '}
+            {achievement.issue_date}
           </p>
-          
+
           {achievement.expiration_date && (
             <p className="text-gray-600 mb-1">
-              <span className="font-semibold">Expires:</span> {achievement.expiration_date}
+              <span className="font-semibold">Expires:</span>{' '}
+              {achievement.expiration_date}
             </p>
           )}
         </div>
@@ -59,7 +63,7 @@ export default function AchievementCard({ achievement }: AchievementCardProps) {
           >
             View Credential
           </Link>
-          
+
           {achievement.credential_id && (
             <div className="flex-1 bg-gray-100 text-gray-700 text-center py-2 px-4 rounded-lg">
               ID: {achievement.credential_id}
@@ -69,4 +73,4 @@ export default function AchievementCard({ achievement }: AchievementCardProps) {
       </div>
     </div>
   );
-} 
+}

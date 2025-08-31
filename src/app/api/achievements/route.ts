@@ -7,7 +7,9 @@ export async function GET(request: NextRequest) {
     const page = parseInt(searchParams.get('page') || '1');
     const limit = parseInt(searchParams.get('limit') || '10');
     const category = searchParams.get('category') || undefined;
-    const isShow = searchParams.get('isShow') ? searchParams.get('isShow') === 'true' : undefined;
+    const isShow = searchParams.get('isShow')
+      ? searchParams.get('isShow') === 'true'
+      : undefined;
 
     const achievements = await achievementsService.getAchievements({
       category,
@@ -36,4 +38,4 @@ export async function POST(request: NextRequest) {
       { status: 500 }
     );
   }
-} 
+}

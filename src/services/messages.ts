@@ -26,28 +26,30 @@ export class MessagesService extends BaseService {
   }
 
   // Get all messages with pagination and filters
-  async getMessages(filters: MessageFilters = {}): Promise<PaginatedResponse<Message>> {
+  async getMessages(
+    filters: MessageFilters = {}
+  ): Promise<PaginatedResponse<Message>> {
     const params = new URLSearchParams();
-    
+
     if (filters.isShow !== undefined) {
       params.append('isShow', filters.isShow.toString());
     }
-    
+
     if (filters.isReply !== undefined) {
       params.append('isReply', filters.isReply.toString());
     }
-    
+
     if (filters.page) {
       params.append('page', filters.page.toString());
     }
-    
+
     if (filters.limit) {
       params.append('limit', filters.limit.toString());
     }
 
     const queryString = params.toString();
     const url = queryString ? `?${queryString}` : '';
-    
+
     return this.get<PaginatedResponse<Message>>(url);
   }
 
@@ -57,10 +59,10 @@ export class MessagesService extends BaseService {
     if (limit) {
       params.append('limit', limit.toString());
     }
-    
+
     const queryString = params.toString();
     const url = `/public${queryString ? `?${queryString}` : ''}`;
-    
+
     return this.get<Message[]>(url);
   }
 
@@ -100,7 +102,7 @@ export class MessagesService extends BaseService {
     if (limit) {
       params.append('limit', limit.toString());
     }
-    
+
     return this.get<Message[]>(`/search?${params.toString()}`);
   }
 
@@ -124,4 +126,4 @@ export class MessagesService extends BaseService {
 
 // Export singleton instance
 export const messagesService = new MessagesService();
-export default messagesService; 
+export default messagesService;

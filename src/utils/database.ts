@@ -10,7 +10,7 @@ const getSupabaseConfig = (): PoolConfig => {
     return {
       connectionString: process.env.POSTGRES_URL,
       ssl: {
-        rejectUnauthorized: false
+        rejectUnauthorized: false,
       },
       max: 20,
       idleTimeoutMillis: 30000,
@@ -25,8 +25,10 @@ const getSupabaseConfig = (): PoolConfig => {
     database: process.env.POSTGRES_DATABASE || 'postgres',
     password: process.env.POSTGRES_PASSWORD || '',
     port: parseInt(process.env.POSTGRES_PORT || '5432'),
-    ssl: process.env.NODE_ENV === 'production' || process.env.POSTGRES_URL ? 
-      { rejectUnauthorized: false } : false,
+    ssl:
+      process.env.NODE_ENV === 'production' || process.env.POSTGRES_URL
+        ? { rejectUnauthorized: false }
+        : false,
     max: 20,
     idleTimeoutMillis: 30000,
     connectionTimeoutMillis: 2000,
@@ -41,7 +43,10 @@ const getLegacyConfig = (): PoolConfig => {
     database: process.env.DB_NAME || 'tuannvq_portfolio',
     password: process.env.DB_PASSWORD || '',
     port: parseInt(process.env.DB_PORT || '5432'),
-    ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
+    ssl:
+      process.env.NODE_ENV === 'production'
+        ? { rejectUnauthorized: false }
+        : false,
     max: 20,
     idleTimeoutMillis: 30000,
     connectionTimeoutMillis: 2000,
@@ -54,12 +59,14 @@ class Database {
 
   private constructor() {
     // Try Supabase config first, then fallback to legacy
-    const config = process.env.POSTGRES_URL || process.env.POSTGRES_HOST ? 
-      getSupabaseConfig() : getLegacyConfig();
-    
+    const config =
+      process.env.POSTGRES_URL || process.env.POSTGRES_HOST
+        ? getSupabaseConfig()
+        : getLegacyConfig();
+
     this.pool = new Pool(config);
-    
-    this.pool.on('error', (err) => {
+
+    this.pool.on('error', err => {
       console.error('Unexpected error on idle client', err);
       process.exit(-1);
     });
@@ -107,4 +114,4 @@ class Database {
   }
 }
 
-export default Database; 
+export default Database;

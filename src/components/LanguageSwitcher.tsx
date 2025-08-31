@@ -7,7 +7,10 @@ interface LanguageSwitcherProps {
   changeLocale: (locale: 'en' | 'vi') => void;
 }
 
-export default function LanguageSwitcher({ locale, changeLocale }: LanguageSwitcherProps) {
+export default function LanguageSwitcher({
+  locale,
+  changeLocale,
+}: LanguageSwitcherProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const getCurrentLanguageName = () => {
@@ -37,7 +40,12 @@ export default function LanguageSwitcher({ locale, changeLocale }: LanguageSwitc
           stroke="currentColor"
           viewBox="0 0 24 24"
         >
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M19 9l-7 7-7-7"
+          />
         </svg>
       </button>
 
@@ -52,12 +60,20 @@ export default function LanguageSwitcher({ locale, changeLocale }: LanguageSwitc
             <span className="text-lg">🇺🇸</span>
             <span>English</span>
             {locale === 'en' && (
-              <svg className="w-4 h-4 ml-auto text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              <svg
+                className="w-4 h-4 ml-auto text-blue-600"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clipRule="evenodd"
+                />
               </svg>
             )}
           </button>
-          
+
           <button
             onClick={() => handleLanguageChange('vi')}
             className={`w-full flex items-center space-x-3 px-4 py-2 text-left hover:bg-gray-50 transition-colors ${
@@ -67,8 +83,16 @@ export default function LanguageSwitcher({ locale, changeLocale }: LanguageSwitc
             <span className="text-lg">🇻🇳</span>
             <span>Tiếng Việt</span>
             {locale === 'vi' && (
-              <svg className="w-4 h-4 ml-auto text-blue-600" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+              <svg
+                className="w-4 h-4 ml-auto text-blue-600"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                  clipRule="evenodd"
+                />
               </svg>
             )}
           </button>
@@ -76,4 +100,4 @@ export default function LanguageSwitcher({ locale, changeLocale }: LanguageSwitc
       )}
     </div>
   );
-} 
+}

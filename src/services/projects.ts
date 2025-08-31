@@ -27,32 +27,34 @@ export class ProjectsService extends BaseService {
   }
 
   // Get all projects with pagination and filters
-  async getProjects(filters: ProjectFilters = {}): Promise<PaginatedResponse<Project>> {
+  async getProjects(
+    filters: ProjectFilters = {}
+  ): Promise<PaginatedResponse<Project>> {
     const params = new URLSearchParams();
-    
+
     if (filters.isShow !== undefined) {
       params.append('isShow', filters.isShow.toString());
     }
-    
+
     if (filters.isFeatured !== undefined) {
       params.append('isFeatured', filters.isFeatured.toString());
     }
-    
+
     if (filters.stack) {
       params.append('stack', filters.stack);
     }
-    
+
     if (filters.page) {
       params.append('page', filters.page.toString());
     }
-    
+
     if (filters.limit) {
       params.append('limit', filters.limit.toString());
     }
 
     const queryString = params.toString();
     const url = queryString ? `?${queryString}` : '';
-    
+
     return this.get<PaginatedResponse<Project>>(url);
   }
 
@@ -62,10 +64,10 @@ export class ProjectsService extends BaseService {
     if (limit) {
       params.append('limit', limit.toString());
     }
-    
+
     const queryString = params.toString();
     const url = `/featured${queryString ? `?${queryString}` : ''}`;
-    
+
     return this.get<Project[]>(url);
   }
 
@@ -100,7 +102,10 @@ export class ProjectsService extends BaseService {
   }
 
   // Toggle featured status
-  async toggleFeaturedStatus(id: number, isFeatured: boolean): Promise<Project> {
+  async toggleFeaturedStatus(
+    id: number,
+    isFeatured: boolean
+  ): Promise<Project> {
     return this.patch<Project>(`/${id}`, { is_featured: isFeatured });
   }
 
@@ -110,7 +115,7 @@ export class ProjectsService extends BaseService {
     if (limit) {
       params.append('limit', limit.toString());
     }
-    
+
     return this.get<Project[]>(`/stack?${params.toString()}`);
   }
 
@@ -120,7 +125,7 @@ export class ProjectsService extends BaseService {
     if (limit) {
       params.append('limit', limit.toString());
     }
-    
+
     return this.get<Project[]>(`/search?${params.toString()}`);
   }
 
@@ -147,16 +152,19 @@ export class ProjectsService extends BaseService {
   }
 
   // Get projects by category (based on stacks)
-  async getProjectsByCategory(category: string, limit?: number): Promise<Project[]> {
+  async getProjectsByCategory(
+    category: string,
+    limit?: number
+  ): Promise<Project[]> {
     const params = new URLSearchParams({ category });
     if (limit) {
       params.append('limit', limit.toString());
     }
-    
+
     return this.get<Project[]>(`/category?${params.toString()}`);
   }
 }
 
 // Export singleton instance
 export const projectsService = new ProjectsService();
-export default projectsService; 
+export default projectsService;
