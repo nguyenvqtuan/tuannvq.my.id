@@ -1,3 +1,4 @@
+import { createClient } from '../common/utils/server';
 import { BaseService } from './base';
 import type { Database } from '@/src/common/types/database';
 
@@ -20,6 +21,36 @@ interface AchievementFilters {
   page?: number;
   limit?: number;
 }
+
+interface GetAchievementsDataProps {
+  category?: string;
+  search?: string;
+}
+
+export const getAchievementsData = async ({
+  category,
+  search,
+}: GetAchievementsDataProps) => {
+  const supabase = await createClient();
+
+  let query = supabase.from('achievements').select();
+
+  if (category) {
+    query = query.eq('category', category);
+  }
+
+  if (search) {
+    query = query.ilike('name', `%${search}%`);
+  }
+
+  const { data, error } = await query;
+
+  if (error) {
+    throw new Error(error.message);
+  }
+
+  return data;
+};
 
 export class AchievementsService extends BaseService {
   constructor() {

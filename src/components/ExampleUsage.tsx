@@ -4,13 +4,15 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiSun, FiMoon, FiGlobe, FiHeart } from 'react-icons/fi';
 import { useAppStore } from '@/src/lib/store';
+import { useTheme } from 'next-themes';
 import useSWR from 'swr';
 
 // Example API endpoint
 const fetcher = (url: string) => fetch(url).then(res => res.json());
 
 export const ExampleUsage = () => {
-  const { theme, language, toggleTheme, setLanguage } = useAppStore();
+  const { language, setLanguage } = useAppStore();
+  const { resolvedTheme, setTheme } = useTheme();
   const [count, setCount] = useState(0);
 
   // Example SWR usage
@@ -18,6 +20,10 @@ export const ExampleUsage = () => {
 
   const handleLanguageChange = (lang: 'en' | 'vi') => {
     setLanguage(lang);
+  };
+
+  const toggleTheme = () => {
+    setTheme(resolvedTheme === 'light' ? 'dark' : 'light');
   };
 
   return (
@@ -39,7 +45,7 @@ export const ExampleUsage = () => {
           onClick={toggleTheme}
           className="p-2 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors"
         >
-          {theme === 'light' ? (
+          {resolvedTheme === 'light' ? (
             <FiSun className="w-5 h-5" />
           ) : (
             <FiMoon className="w-5 h-5" />

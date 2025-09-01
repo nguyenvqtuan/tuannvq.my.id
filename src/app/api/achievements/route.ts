@@ -1,41 +1,37 @@
-import { NextRequest, NextResponse } from 'next/server';
-import { achievementsService } from '@/src/services';
+import { type NextRequest, NextResponse } from 'next/server';
 
-export async function GET(request: NextRequest) {
+import { getAchievementsData } from '@/src/services/achievements';
+
+export const GET = async (req: NextRequest) => {
   try {
-    const { searchParams } = new URL(request.url);
-    const page = parseInt(searchParams.get('page') || '1');
-    const limit = parseInt(searchParams.get('limit') || '10');
-    const category = searchParams.get('category') || undefined;
-    const isShow = searchParams.get('isShow')
-      ? searchParams.get('isShow') === 'true'
-      : undefined;
+    const searchParams = req.nextUrl.searchParams;
+    const queryCategory = searchParams.get('category');
+    const querySearch = searchParams.get('search');
 
-    const achievements = await achievementsService.getAchievements({
-      category,
-      isShow,
-      page,
-      limit,
-    });
+    if (queryCategory && querySearch) {
+      const data = await getAchievementsData({
+        category: queryCategory,
+        search: querySearch,
+      });
+      return NextResponse.json(data, { status: 200 });
+    }
 
-    return NextResponse.json(achievements);
+    if (queryCategory && queryCategory.trim()) {
+      const data = await getAchievementsData({ category: queryCategory });
+      return NextResponse.json(data, { status: 200 });
+    }
+
+    if (querySearch) {
+      const data = await getAchievementsData({ search: querySearch });
+      return NextResponse.json(data, { status: 200 });
+    }
+
+    const data = await getAchievementsData({});
+    return NextResponse.json(data, { status: 200 });
   } catch (error) {
     return NextResponse.json(
-      { error: 'Failed to fetch achievements' },
+      { message: 'Internal Server Error' },
       { status: 500 }
     );
   }
-}
-
-export async function POST(request: NextRequest) {
-  try {
-    const body = await request.json();
-    const achievement = await achievementsService.createAchievement(body);
-    return NextResponse.json(achievement, { status: 201 });
-  } catch (error) {
-    return NextResponse.json(
-      { error: 'Failed to create achievement' },
-      { status: 500 }
-    );
-  }
-}
+};

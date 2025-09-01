@@ -1,3 +1,4 @@
+import { createClient } from '../common/utils/server';
 import { BaseService } from './base';
 import type { Database } from '@/src/common/types/database';
 
@@ -20,6 +21,24 @@ interface ProjectFilters {
   page?: number;
   limit?: number;
 }
+
+export const getProjectsData = async () => {
+  const supabase = await createClient();
+
+  let { data } = await supabase.from('projects').select();
+  return data;
+};
+
+export const getProjectsDataBySlug = async (slug: string) => {
+  const supabase = await createClient();
+
+  let { data } = await supabase
+    .from('projects')
+    .select()
+    .eq('slug', slug)
+    .single();
+  return data;
+};
 
 export class ProjectsService extends BaseService {
   constructor() {

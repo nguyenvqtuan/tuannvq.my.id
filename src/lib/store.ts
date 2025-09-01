@@ -6,13 +6,14 @@ interface AppState {
   setLanguage: (lang: 'en' | 'vi') => void;
 }
 
-export const useAppStore = create<AppState>();
-persist(
-  set => ({
-    language: 'en',
-    setLanguage: (lang: 'en' | 'vi') => set({ language: lang }),
-  }),
-  {
-    name: 'app-storage',
-  }
+export const useAppStore = create<AppState>()(
+  persist(
+    set => ({
+      language: 'en',
+      setLanguage: (lang: 'en' | 'vi') => set({ language: lang }),
+    }),
+    {
+      name: 'app-storage',
+    }
+  )
 );

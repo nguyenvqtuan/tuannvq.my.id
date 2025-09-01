@@ -14,7 +14,7 @@ import ChatItemSkeleton from './ChatItemSkeleton';
 import { MessageProps } from '@/src/common/types/chat';
 import { fetcher } from '@/src/services/fetcher';
 import { createClient } from '@/src/common/utils/client';
-import useNotify from '@/src/hooks/useNotify';
+import useNotif from '@/src/hooks/useNotif';
 
 export const ChatRoom = ({ isWidget = false }: { isWidget?: boolean }) => {
   const { data, isLoading } = useSWR('/api/chat', fetcher);
@@ -26,10 +26,10 @@ export const ChatRoom = ({ isWidget = false }: { isWidget?: boolean }) => {
 
   const supabase = createClient();
 
-  const notify = useNotify();
+  const notif = useNotif();
 
   const handleClickReply = (name: string) => {
-    if (!session?.user) return notify('Please sign in to reply');
+    if (!session?.user) return notif('Please sign in to reply');
     setIsReply({ is_reply: true, name });
   };
 
@@ -50,19 +50,19 @@ export const ChatRoom = ({ isWidget = false }: { isWidget?: boolean }) => {
     };
     try {
       await axios.post('/api/chat', newMessageData);
-      notify('Successfully to send message');
+      notif('Successfully to send message');
     } catch (error) {
       console.error('Error:', error);
-      notify('Failed to send message');
+      notif('Failed to send message');
     }
   };
 
   const handleDeleteMessage = async (id: string) => {
     try {
       await axios.delete(`/api/chat/${id}`);
-      notify('Successfully to delete message');
+      notif('Successfully to delete message');
     } catch (error) {
-      notify('Failed to delete message');
+      notif('Failed to delete message');
     }
   };
 
