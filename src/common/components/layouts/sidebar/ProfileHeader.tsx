@@ -17,8 +17,8 @@ const ProfileHeader = ({ expandMenu, imageSize }: ProfileHeaderProps) => {
   return (
     <div
       className={cn(
-        'flex w-full flex-grow items-center gap-4 lg:flex-col  lg:gap-0.5',
-        expandMenu && 'flex-col !items-start'
+        'flex w-full flex-grow items-center gap-4 lg:flex-col ',
+        expandMenu && 'flex-col !items-start lg:gap-0.5 '
       )}
     >
       <Image

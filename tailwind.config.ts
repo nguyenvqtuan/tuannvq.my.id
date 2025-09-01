@@ -8,6 +8,7 @@ const config: Config = {
     './src/common/**/*.{js,ts,jsx,tsx,mdx}',
     './src/modules/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: 'class', // This is crucial for next-themes to work
   theme: {
     extend: {
       colors: {
@@ -76,6 +77,5 @@ const config: Config = {
     },
   },
   plugins: [],
-  darkMode: 'class',
 };
 export default config;
