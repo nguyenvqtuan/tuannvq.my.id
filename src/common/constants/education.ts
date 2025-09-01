@@ -2,13 +2,13 @@ import { EducationProps } from '@/src/common/types/education';
 
 export const EDUCATION: EducationProps[] = [
   {
-    school: 'Universitas Jambi',
-    major: 'Information Systems, (S.Kom)',
-    logo: '/images/education/unja.png',
-    location: 'Jambi, Indonesia 🇮🇩',
-    degree: "Bachelor's degree",
-    start_year: 2022,
-    end_year: 2026,
-    link: 'https://www.unja.ac.id',
+    school: 'DANANG VOCATIONAL TRAINING COLLEGE',
+    major: 'Information Technology',
+    logo: '/images/education/danang-college.png',
+    location: 'Danang, Vietnam 🇻🇳',
+    degree: "Associate's degree",
+    start_year: 2016,
+    end_year: 2019,
+    link: '#',
   },
 ];

@@ -1,9 +1,9 @@
 export const ABOUT = [
-  "Hello there! Thank you for visiting my personal website. I'm Nguyen Van Quoc Tuan, a student majoring in Information Systems at the University of Jambi. I have a strong interest in frontend development. With a solid foundation in JavaScript and TypeScript, as well as a comprehensive understanding of various frontend libraries and frameworks, I have navigated the ever-evolving landscape of web development with enthusiasm and dedication.",
+  "Hello there! Thank you for visiting my personal website. I'm Nguyen Van Quoc Tuan, a Middle Fullstack Developer based in Danang, Vietnam. I have a strong passion for fullstack development with expertise in Java, Spring Boot, Vue.js, and React.js.",
 
-  'I focus on creating web applications that not only provide precise experiences but are also user-friendly. My specialization includes JavaScript and TypeScript, along with frameworks such as React, Vite, and Next.js. As a quick learner and adaptive thinker, I thrive in a dynamic environment where innovation is a driving force. My collaborative nature allows me to seamlessly integrate with teams, contributing not only to my technical skills but also embodying a humble attitude that values input from every team member.',
+  'I focus on creating scalable web applications that provide precise experiences and are user-friendly. My specialization includes Java 21, Spring Boot, Vue.js 3, TypeScript, and various cloud technologies like AWS. As a quick learner and adaptive thinker, I thrive in dynamic environments where innovation drives success.',
 
-  'I strongly believe that effective communication is crucial for success in any role. I am adaptable, think efficiently, and always strive for the best. My experiences have equipped me with analytical skills and strong leadership abilities. I am comfortable working collaboratively in a team and am excited about the opportunity to contribute to team success. Looking forward to the possibility of collaboration!',
+  'With over 4 years of experience in software development, I have worked on various projects including logistics systems, banking APIs, and e-commerce platforms. I am comfortable working collaboratively in teams and am excited about the opportunity to contribute to project success while expanding my knowledge in DevOps and cloud technologies.',
 
   'Best Regards,',
 ];

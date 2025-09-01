@@ -1,9 +1,9 @@
 {
   "HomePage": {
     "intro": "Xin chào, tôi là Nguyễn Văn Quốc Tuấn",
-    "location": "Sống tại Jambi, Indonesia 🇮🇩",
+    "location": "Sống tại Đà Nẵng, Việt Nam 🇻🇳",
     "location_type": "Tại chỗ",
-    "resume": "Lập trình viên Fullstack giàu kinh nghiệm và đam mê, chuyên xây dựng các giải pháp kỹ thuật số có khả năng mở rộng và hiệu quả. Ở phía frontend, tôi làm việc với Next.js, TypeScript và Tailwind CSS để tạo ra các giao diện người dùng đáp ứng và dễ tiếp cận. Ở phía backend, tôi phát triển các dịch vụ mạnh mẽ sử dụng Golang, và cho mobile, tôi xây dựng các ứng dụng Android gốc với Kotlin. Tôi là một kỹ sư cộng tác và chú ý đến chi tiết, cam kết cung cấp các ứng dụng có cấu trúc tốt, hiệu suất cao trên nhiều nền tảng.",
+    "resume": "Lập trình viên Fullstack giàu kinh nghiệm và đam mê, chuyên xây dựng các giải pháp kỹ thuật số có khả năng mở rộng và hiệu quả. Ở phía frontend, tôi làm việc với Vue.js 3, TypeScript và Bootstrap để tạo ra các giao diện người dùng đáp ứng và dễ tiếp cận. Ở phía backend, tôi phát triển các dịch vụ mạnh mẽ sử dụng Java 21, Spring Boot và các công nghệ đám mây AWS. Tôi là một kỹ sư cộng tác và chú ý đến chi tiết, cam kết cung cấp các ứng dụng có cấu trúc tốt, hiệu suất cao trên nhiều nền tảng.",
     "skills": {
       "title": "Kỹ năng",
       "sub_title": "Kỹ năng chuyên môn của tôi."
@@ -17,11 +17,11 @@
     "title": "Giới thiệu",
     "description": "Một lời giới thiệu ngắn gọn về tôi.",
     "resume": {
-      "paragraf_1": "Xin chào! Cảm ơn bạn đã ghé thăm trang web cá nhân của tôi. Tôi là Nguyễn Văn Quốc Tuấn, một sinh viên chuyên ngành Hệ thống Thông tin tại Đại học Jambi. Tôi là một Lập trình viên Fullstack với niềm đam mê xây dựng các sản phẩm phần mềm có tác động. Stack của tôi bao gồm các công nghệ frontend hiện đại như Next.js, TypeScript và Tailwind CSS, cũng như phát triển backend sử dụng Golang. Đối với các ứng dụng di động, tôi phát triển các ứng dụng Android gốc sử dụng Kotlin.",
+      "paragraf_1": "Xin chào! Cảm ơn bạn đã ghé thăm trang web cá nhân của tôi. Tôi là Nguyễn Văn Quốc Tuấn, một Lập trình viên Fullstack cấp trung tại Đà Nẵng, Việt Nam. Tôi có niềm đam mê mạnh mẽ về phát triển fullstack với chuyên môn về Java, Spring Boot, Vue.js và React.js.",
 
-      "paragraf_2": "Tôi thích tạo ra các giải pháp vừa thân thiện với người dùng vừa có hiệu suất cao. Dù là xây dựng giao diện trực quan hay kiến trúc các dịch vụ backend, tôi nhắm đến việc mang lại hiệu quả và rõ ràng vào mọi lớp của ứng dụng. Tôi là người học nhanh, phát triển mạnh trong môi trường năng động, và thích giải quyết các vấn đề phức tạp một cách cộng tác.",
+      "paragraf_2": "Tôi tập trung vào việc tạo ra các ứng dụng web có khả năng mở rộng, cung cấp trải nghiệm chính xác và thân thiện với người dùng. Chuyên môn của tôi bao gồm Java 21, Spring Boot, Vue.js 3, TypeScript và các công nghệ đám mây khác nhau như AWS. Là người học nhanh và tư duy thích ứng, tôi phát triển mạnh trong môi trường năng động nơi đổi mới thúc đẩy thành công.",
 
-      "paragraf_3": "Tôi tin rằng giao tiếp tốt và sự đồng thuận nhóm là chìa khóa thành công trong phát triển phần mềm. Kinh nghiệm của tôi đã hình thành kỹ năng kỹ thuật và phân tích, cũng như phẩm chất lãnh đạo. Tôi luôn hào hứng làm việc trong nhóm, học hỏi từ người khác và đóng góp vào các dự án có tác động.",
+      "paragraf_3": "Với hơn 4 năm kinh nghiệm trong phát triển phần mềm, tôi đã làm việc trên nhiều dự án khác nhau bao gồm hệ thống logistics, API ngân hàng và nền tảng thương mại điện tử. Tôi thoải mái làm việc cộng tác trong nhóm và hào hứng về cơ hội đóng góp vào thành công dự án trong khi mở rộng kiến thức về DevOps và công nghệ đám mây.",
 
       "paragraf_4": "Trân trọng,"
     },

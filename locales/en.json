@@ -1,29 +1,29 @@
 {
   "HomePage": {
     "intro": "Hi, I'm Nguyen Van Quoc Tuan",
-    "location": "Based in Jambi, Indonesia 🇮🇩",
+    "location": "Based in Danang, Vietnam 🇻🇳",
     "location_type": "Onsite",
-    "resume": "Experienced and passionate Fullstack Developer specializing in building scalable and efficient digital solutions. On the frontend, I work with Next.js, TypeScript, and Tailwind CSS to craft responsive and accessible user interfaces. On the backend, I develop robust services using Golang, and for mobile, I build native Android apps with Kotlin. I’m a collaborative and detail-oriented engineer committed to delivering well-structured, high-performance applications across platforms.",
+    "resume": "Experienced and passionate Middle Fullstack Developer specializing in building scalable and efficient digital solutions. On the frontend, I work with Vue.js 3, TypeScript, and Bootstrap to craft responsive and accessible user interfaces. On the backend, I develop robust services using Java 21, Spring Boot, and various AWS cloud technologies. I'm a collaborative and detail-oriented engineer committed to delivering well-structured, high-performance applications across platforms.",
     "skills": {
       "title": "Skills",
       "sub_title": "My professional skills."
     },
     "bento": {
       "title": "Featured Sections",
-      "sub_title": "Explore everything I’ve crafted, contributed, and accomplished."
+      "sub_title": "Explore everything I've crafted, contributed, and accomplished."
     }
   },
   "AboutPage": {
     "title": "About",
     "description": "A brief introduction to who I am.",
     "resume": {
-      "paragraf_1": "Hello there! Thank you for visiting my personal website. I'm Nguyen Van Quoc Tuan, a student majoring in Information Systems at the University of Jambi. I'm a Fullstack Developer with a passion for building impactful software products. My stack includes modern frontend technologies like Next.js, TypeScript, and Tailwind CSS, as well as backend development using Golang. For mobile applications, I develop native Android apps using Kotlin.",
+      "paragraf_1": "Hello there! Thank you for visiting my personal website. I'm Nguyen Van Quoc Tuan, a Middle Fullstack Developer based in Danang, Vietnam. I have a strong passion for fullstack development with expertise in Java, Spring Boot, Vue.js, and React.js.",
 
-      "paragraf_2": "I enjoy creating solutions that are both user-friendly and performant. Whether it's building intuitive interfaces or architecting backend services, I aim to bring efficiency and clarity into every layer of the application. I’m a fast learner who thrives in dynamic environments, and I enjoy solving complex problems collaboratively.",
+      "paragraf_2": "I focus on creating scalable web applications that provide precise experiences and are user-friendly. My specialization includes Java 21, Spring Boot, Vue.js 3, TypeScript, and various cloud technologies like AWS. As a quick learner and adaptive thinker, I thrive in dynamic environments where innovation drives success.",
 
-      "paragraf_3": "I believe that great communication and team synergy are key to success in software development. My experience has shaped my technical and analytical skills, as well as my leadership qualities. I'm always excited to work in teams, learn from others, and contribute to impactful projects.",
+      "paragraf_3": "With over 4 years of experience in software development, I have worked on various projects including logistics systems, banking APIs, and e-commerce platforms. I am comfortable working collaboratively in teams and am excited about the opportunity to contribute to project success while expanding my knowledge in DevOps and cloud technologies.",
 
-      "paragraf_4": "Best regards,"
+      "paragraf_4": "Best Regards,"
     },
     "career": {
       "title": "Career",

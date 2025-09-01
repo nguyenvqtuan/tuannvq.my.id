@@ -44,7 +44,8 @@ export const BENTO: BentoItemProps[] = [
   },
   {
     title: 'Skills & Tools',
-    description: 'Covering mobile, web, AI, and UI/UX technologies.',
+    description:
+      'Covering Java, Spring Boot, Vue.js, React.js, and AWS cloud technologies.',
     label: 'Stack',
     icon: BENTO_ICONS.stack,
     visual: BENTO_VISUALS.stack,
@@ -77,7 +78,8 @@ export const BENTO: BentoItemProps[] = [
   },
   {
     title: 'Services',
-    description: 'End-to-end solutions in web, mobile, AI, and design.',
+    description:
+      'End-to-end solutions in web development, backend services, and cloud infrastructure.',
     label: 'Services',
     icon: BENTO_ICONS.services,
     visual: BENTO_VISUALS.services,
