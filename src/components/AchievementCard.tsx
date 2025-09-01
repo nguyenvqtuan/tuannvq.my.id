@@ -1,6 +1,6 @@
 'use client';
 
-import { Achievement } from '@/common/types';
+import { Achievement } from '@/src/common/types';
 import Image from 'next/image';
 import Link from 'next/link';
 

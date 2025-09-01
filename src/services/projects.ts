@@ -1,5 +1,5 @@
 import { BaseService } from './base';
-import type { Database } from '../common/types/database';
+import type { Database } from '@/src/common/types/database';
 
 type Project = Database['public']['Tables']['projects']['Row'];
 type InsertProject = Database['public']['Tables']['projects']['Insert'];

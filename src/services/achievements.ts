@@ -1,5 +1,5 @@
 import { BaseService } from './base';
-import type { Database } from '../common/types/database';
+import type { Database } from '@/src/common/types/database';
 
 type Achievement = Database['public']['Tables']['achievements']['Row'];
 type InsertAchievement = Database['public']['Tables']['achievements']['Insert'];

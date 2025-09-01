@@ -7,8 +7,23 @@ export abstract class BaseService {
 
   constructor(baseURL: string = '/api') {
     this.baseURL = baseURL;
+
+    // For server-side requests, use absolute URL if available
+    const isServer = typeof window === 'undefined';
+    let serverBaseURL = this.baseURL;
+
+    if (isServer) {
+      if (process.env.NEXT_PUBLIC_API_URL) {
+        serverBaseURL = process.env.NEXT_PUBLIC_API_URL;
+      } else if (process.env.DOMAIN) {
+        serverBaseURL = `https://${process.env.DOMAIN}`;
+      } else {
+        serverBaseURL = 'http://localhost:3000';
+      }
+    }
+
     this.axiosInstance = axios.create({
-      baseURL: this.baseURL,
+      baseURL: serverBaseURL,
       timeout: 10000,
       headers: {
         'Content-Type': 'application/json',

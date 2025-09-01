@@ -1,5 +1,5 @@
 import { BaseService } from './base';
-import type { Database } from '../common/types/database';
+import type { Database } from '@/src/common/types/database';
 
 type Message = Database['public']['Tables']['messages']['Row'];
 type InsertMessage = Database['public']['Tables']['messages']['Insert'];
@@ -61,7 +61,7 @@ export class MessagesService extends BaseService {
     }
 
     const queryString = params.toString();
-    const url = `/public${queryString ? `?${queryString}` : ''}`;
+    const url = `/images/${queryString ? `?${queryString}` : ''}`;
 
     return this.get<Message[]>(url);
   }

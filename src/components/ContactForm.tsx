@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { messagesService } from '@/services';
+import { messagesService } from '@/src/services';
 
 interface ContactFormData {
   name: string;

@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FiSun, FiMoon, FiGlobe, FiHeart } from 'react-icons/fi';
-import { useAppStore } from '@/lib/store';
+import { useAppStore } from '@/src/lib/store';
 import useSWR from 'swr';
 
 // Example API endpoint

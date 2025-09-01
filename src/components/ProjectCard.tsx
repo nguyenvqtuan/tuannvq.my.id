@@ -1,6 +1,6 @@
 'use client';
 
-import { Project } from '@/common/types';
+import { Project } from '@/src/common/types';
 import Image from 'next/image';
 import Link from 'next/link';
 

@@ -5,61 +5,77 @@ const config: Config = {
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/common/**/*.{js,ts,jsx,tsx,mdx}',
+    './src/modules/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
       colors: {
-        primary: {
-          50: '#eff6ff',
-          100: '#dbeafe',
-          200: '#bfdbfe',
-          300: '#93c5fd',
-          400: '#60a5fa',
-          500: '#3b82f6',
-          600: '#2563eb',
-          700: '#1d4ed8',
-          800: '#1e40af',
-          900: '#1e3a8a',
-        },
-        secondary: {
-          50: '#f8fafc',
-          100: '#f1f5f9',
-          200: '#e2e8f0',
-          300: '#cbd5e1',
-          400: '#94a3b8',
-          500: '#64748b',
-          600: '#475569',
-          700: '#334155',
-          800: '#1e293b',
-          900: '#0f172a',
-        },
+        darkText: '#E4E6EB',
+        dark: '#121212',
+        light: '#fafafa',
       },
-      fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        mono: ['JetBrains Mono', 'monospace'],
-      },
-      animation: {
-        'fade-in': 'fadeIn 0.5s ease-in-out',
-        'slide-up': 'slideUp 0.3s ease-out',
-        'bounce-gentle': 'bounceGentle 2s infinite',
+      backgroundImage: {
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'gradient-conic':
+          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       keyframes: {
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '100%': { opacity: '1' },
+        shine: {
+          '0%': { 'background-position': '100%' },
+          '100%': { 'background-position': '-100%' },
         },
-        slideUp: {
-          '0%': { transform: 'translateY(10px)', opacity: '0' },
-          '100%': { transform: 'translateY(0)', opacity: '1' },
+        gradient: {
+          '0%': { backgroundPosition: '0% 50%' },
+          '50%': { backgroundPosition: '100% 50%' },
+          '100%': { backgroundPosition: '0% 50%' },
         },
-        bounceGentle: {
-          '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-5px)' },
+        glitch: {
+          '0%': { 'clip-path': 'inset(20% 0 50% 0)' },
+          '5%': { 'clip-path': 'inset(10% 0 60% 0)' },
+          '10%': { 'clip-path': 'inset(15% 0 55% 0)' },
+          '15%': { 'clip-path': 'inset(25% 0 35% 0)' },
+          '20%': { 'clip-path': 'inset(30% 0 40% 0)' },
+          '25%': { 'clip-path': 'inset(40% 0 20% 0)' },
+          '30%': { 'clip-path': 'inset(10% 0 60% 0)' },
+          '35%': { 'clip-path': 'inset(15% 0 55% 0)' },
+          '40%': { 'clip-path': 'inset(25% 0 35% 0)' },
+          '45%': { 'clip-path': 'inset(30% 0 40% 0)' },
+          '50%': { 'clip-path': 'inset(20% 0 50% 0)' },
+          '55%': { 'clip-path': 'inset(10% 0 60% 0)' },
+          '60%': { 'clip-path': 'inset(15% 0 55% 0)' },
+          '65%': { 'clip-path': 'inset(25% 0 35% 0)' },
+          '70%': { 'clip-path': 'inset(30% 0 40% 0)' },
+          '75%': { 'clip-path': 'inset(40% 0 20% 0)' },
+          '80%': { 'clip-path': 'inset(20% 0 50% 0)' },
+          '85%': { 'clip-path': 'inset(10% 0 60% 0)' },
+          '90%': { 'clip-path': 'inset(15% 0 55% 0)' },
+          '95%': { 'clip-path': 'inset(25% 0 35% 0)' },
+          '100%': { 'clip-path': 'inset(30% 0 40% 0)' },
         },
+        'star-movement-bottom': {
+          '0%': { transform: 'translate(0%, 0%)', opacity: '1' },
+          '100%': { transform: 'translate(-100%, 0%)', opacity: '0' },
+        },
+        'star-movement-top': {
+          '0%': { transform: 'translate(0%, 0%)', opacity: '1' },
+          '100%': { transform: 'translate(100%, 0%)', opacity: '0' },
+        },
+      },
+      animation: {
+        shine: 'shine 5s linear infinite',
+        gradient: 'gradient 8s linear infinite',
+        'glitch-after':
+          'glitch var(--after-duration) infinite linear alternate-reverse',
+        'glitch-before':
+          'glitch var(--before-duration) infinite linear alternate-reverse',
+        'star-movement-bottom':
+          'star-movement-bottom linear infinite alternate',
+        'star-movement-top': 'star-movement-top linear infinite alternate',
       },
     },
   },
   plugins: [],
+  darkMode: 'class',
 };
-
 export default config;
